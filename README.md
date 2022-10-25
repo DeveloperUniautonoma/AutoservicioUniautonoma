@@ -27,3 +27,19 @@
 
 9. pip install django-cors-headers
 
+
+
+
+********************
+## Configurar el archivo .env
+
+backend/.env
+Aqui van las credenciales a la BD
+
+
+********************
+## API KEY DJANGO
+
+ingresar la api key de django en el archivo settings.py
+
+
