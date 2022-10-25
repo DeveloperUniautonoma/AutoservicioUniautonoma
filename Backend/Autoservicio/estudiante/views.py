@@ -64,3 +64,23 @@ def get_programa(self, idPersona, rol):
             return JsonResponse(datos)
     except Exception as ex:
         print(ex)
+
+
+def get_horario_modular_alumno(self, peopleId, academicYear, academicTerm):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("sp_cuacav_HorarioAlumnoModular '{0}','{1}','{2}'".format(peopleId, academicYear, academicTerm))
+            data = cursor.fetchall()
+
+            # Se verifica que se encontro datos
+            if data != None: 
+                json_data=[]
+                for row in data:
+                    json_data.append({ "codigoCurso": row[1], "nombreCurso": row[2], "jornada": row[3], "grupo": row[4], "fechaInicio": row[5], "fechaFin": row[6], "horario": row[7], "docente": row[8] })
+                datos = {'Status': "Success", 'horarioModular': json_data}
+                connection.close()
+            else:
+                datos = {'Status': "Failed", 'message': 'No se encontro el horario para este peopleId', 'peopleId': peopleId }
+            return JsonResponse(datos)
+    except Exception as ex:
+        print(ex)

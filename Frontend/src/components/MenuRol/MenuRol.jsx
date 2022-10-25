@@ -33,9 +33,7 @@ export const MenuRol = () => {
 },[idPersona]);
 
   return (
-    <>
-      
-        
+    <>        
         <label>Seleccione Rol</label>
         <select onChange={handleUpdateRol} id="inputState" className="form-control">
           <option value={rol} onChange={handleUpdateRol} >{ rol }</option>
@@ -49,8 +47,6 @@ export const MenuRol = () => {
             }
           
         </select>
-        
-      
     </>
   )
 }

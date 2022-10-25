@@ -1,6 +1,6 @@
 
 import { useDispatch, useSelector } from "react-redux";
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { onAuthStateChanged } from "firebase/auth";
 import { FirebaseAuth } from "../firebase/config";
 import { useEffect, useState } from "react";
@@ -60,7 +60,7 @@ export const AppRouter = () => {
                 : <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
             }
 
-                <Redirect from="/*" to="/auth" />
+                {/* <Redirect from="/*" to="/auth" /> */}
         </Switch>
     )
 }

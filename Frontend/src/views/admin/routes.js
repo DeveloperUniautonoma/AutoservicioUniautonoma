@@ -5,6 +5,7 @@ import Register from "../examples/Register";
 import Login from "../auth/Login";
 import Tables from "../examples/Tables";
 import Icons from "../examples/Icons";
+import HorarioModularAlumno from "../admin/HorarioModularAlumno/HorarioModularAlumno";
 
 var routes = [
   {
@@ -12,6 +13,13 @@ var routes = [
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
+    layout: "/admin"
+  },
+  {
+    path: "/HorarioModularAlumno",
+    name: "Horario",
+    icon: "ni ni-tv-2 text-primary",
+    component: HorarioModularAlumno,
     layout: "/admin"
   },
   {
