@@ -32,7 +32,7 @@ def get_rol(self, idPersona):
             
             # print(cursor.fetchall())
             # Se verifica que se encontro la persona
-            if data != None: 
+            if data != []: 
                 json_data=[]
                 for row in data:
                     json_data.append({ "idPersona": row[0], "rol": row[1], "nro": row[2] })
@@ -53,7 +53,7 @@ def get_programa(self, idPersona, rol):
             data = cursor.fetchall()
 
             # Se verifica que se encontro datos
-            if data != None: 
+            if data != []: 
                 json_data=[]
                 for row in data:
                     json_data.append({ "idPersona": row[0], "rol": row[1], "codigoPower": row[2], "codigoPrograma": row[3], "nombrePrograma": row[4] })
@@ -71,9 +71,9 @@ def get_horario_modular_alumno(self, peopleId, academicYear, academicTerm):
         with connection.cursor() as cursor:
             cursor.execute("sp_cuacav_HorarioAlumnoModular '{0}','{1}','{2}'".format(peopleId, academicYear, academicTerm))
             data = cursor.fetchall()
-
+            print(data)
             # Se verifica que se encontro datos
-            if data != None: 
+            if data != []: 
                 json_data=[]
                 for row in data:
                     json_data.append({ "codigoCurso": row[1], "nombreCurso": row[2], "jornada": row[3], "grupo": row[4], "fechaInicio": row[5], "fechaFin": row[6], "horario": row[7], "docente": row[8] })

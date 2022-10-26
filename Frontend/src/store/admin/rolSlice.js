@@ -3,16 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 export const rolSlice = createSlice({
    name: 'rol',
    initialState: {
-        rol: null,
+        rol_activo: null,
     },
     reducers: {
         putRol:( state, { payload }) =>{
-            state.rol = payload.rol;    
+            state.rol_activo = payload;    
         
         },
 
         deleteRol: ( state )=> {
-            state.rol = null;
+            state.rol_activo = null;
         },
     }
 });

@@ -1,4 +1,3 @@
-
 import { RolPersonaTodos } from "controller/functions/RolPersona";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +6,7 @@ import { startGetRol } from "store/auth/thunks";
 
 
 export const MenuRol = () => {
+
   const { idPersona, rol } = useSelector( state => state.people );
   const [rol1, setRol1] = useState([])
   
@@ -15,11 +15,14 @@ export const MenuRol = () => {
 
   const trae_roles = async() =>{
     
-    const resultRol = await RolPersonaTodos( idPersona );
-    if ( !resultRol.ok ) return <h1>No se encontró rol</h1>
-      
-    setRol1(resultRol.data.roles);
+    const { data } = await RolPersonaTodos( idPersona );
     
+    if ( data.Status === 'Failed' ){
+      setRol1('Failed')
+    } else {
+      
+      setRol1(data.roles);
+    }
  };
 
  const handleUpdateRol = (e) => {
@@ -34,19 +37,31 @@ export const MenuRol = () => {
 
   return (
     <>        
-        <label>Seleccione Rol</label>
-        <select onChange={handleUpdateRol} id="inputState" className="form-control">
-          <option value={rol} onChange={handleUpdateRol} >{ rol }</option>
-          {
+        { 
+            rol1 === 'Failed' ?
+              <div>
+                <p>No se encontró ningun rol</p>
+              </div>
+            :
+            <div>
+
+              <label>Seleccione Rol</label>
+              <select  id="inputState" className="form-control" onClick={handleUpdateRol}>
               
-              Object.keys(rol1).map((key,i) => (
+                {
+                  rol1.map((result, i) => (
+                    
+                    <option key={i} value={ result.rol }>{result.rol}</option>
+                    
+                    ))
                 
-                <option  key={i} value={rol1[key].rol} >{rol1[key].rol}</option>
-                
-                ))
-            }
-          
-        </select>
+                } 
+            
+              </select>
+
+            </div>
+        }
+        
     </>
   )
 }

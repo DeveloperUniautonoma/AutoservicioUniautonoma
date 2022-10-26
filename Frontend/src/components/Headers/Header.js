@@ -1,5 +1,3 @@
-// reactstrap components
-import Modals from "components/Alertas/Alertas";
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 
 
@@ -10,7 +8,7 @@ import { DatosPersona } from "controller/functions/DatosPersona";
 import { RolPersona } from "controller/functions/RolPersona";
 import { ProgramaPersona } from "controller/functions/ProgramaPersona";
 import { startGetPersona } from "store/auth/thunks";
-import { startGetRol } from "store/auth/thunks";
+// import { startGetRol } from "store/auth/thunks";
 import { startGetPrograma } from "store/auth/thunks";
 
 const Header = () => {
@@ -23,6 +21,7 @@ const Header = () => {
   
   const { email } = useSelector( state => state.auth );
   const { rol } = useSelector( state => state.people );
+  const { rol_activo } = useSelector( state => state.rol );
   const dispatch = useDispatch();
 
   const datos_alumno = async() =>{
@@ -38,7 +37,7 @@ const Header = () => {
      const resultRol = await RolPersona(estudiante.idPersona);
      if ( !resultRol.ok ) return <h1>No se encontró rol</h1>
      setRol1(resultRol);
-     dispatch( startGetRol(resultRol) );
+    //  dispatch( startGetRol(resultRol) );
   };
 
 
@@ -91,7 +90,7 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          <Modals />
+                        
                           { estudiante.nombre }
                         </CardTitle> 
                         <span className="h4 font-weight-bold mb-0">        
@@ -100,9 +99,18 @@ const Header = () => {
                       </div>
                     </Row>
                     <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-success mr-2">
-                        <i className="fa fa-arrow-up" /> { rol }
-                      </span>
+                      
+                        {
+                          rol_activo == null ?
+                          <span className="text-success mr-2">
+                            <i className="fa fa-arrow-up" /> { rol }
+                          </span>
+                          :
+                          <span className="text-success mr-2">
+                            <i className="fa fa-arrow-up" /> { rol_activo }
+                          </span>
+                        }
+                      
                     </p>
                     <p className="mt-3 mb-0 text-muted text-sm">
                       <span className="text-nowrap">{ programa.nombrePrograma }</span>
