@@ -7,7 +7,7 @@ import { startGetRol } from "store/auth/thunks";
 
 export const MenuRol = () => {
 
-  const { idPersona, rol } = useSelector( state => state.people );
+  const { idPersona } = useSelector( state => state.people );
   const [rol1, setRol1] = useState([])
   
   const dispatch = useDispatch();

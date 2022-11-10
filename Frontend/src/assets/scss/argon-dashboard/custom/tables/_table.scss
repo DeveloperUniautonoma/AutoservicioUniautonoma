@@ -49,7 +49,7 @@
    .thead-dark {
         th {
             background-color: $table-dark-head-bg;
-            color: $table-dark-head-color;
+            color: $table-head-color;
         }
     }
 
@@ -111,8 +111,11 @@
 
         td,
         th {
-            padding-left: $card-spacer-x;
-            padding-right: $card-spacer-x;
+            // padding-left: $card-spacer-x;
+            padding-right: 1rem;
+            font-size: 12px;
         }
     }
 }
+
+

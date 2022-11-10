@@ -30,10 +30,10 @@ export const ProgramaPersonaTodos = async(idPerson, rol1) => {
       
         const res = await GetProcedimientosAlmacenados.getProgramaPersona(idPerson, rol1);
         const data = await res.json();
-        const { idPersona, rol, codigoPower, codigoPrograma, nombrePrograma } = data.programa;
+        
         return { 
             ok: true,
-            idPersona, rol, codigoPower, codigoPrograma, nombrePrograma
+            data
         }
 
 

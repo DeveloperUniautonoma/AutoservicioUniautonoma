@@ -50,10 +50,6 @@ const Index = (props) => {
     setActiveNav(index);
     setChartExample1Data("data" + index);
   };
-
-
-  // Se llama al procedimiento almacenado para consultar los datos de la persona
-  
   
 
   return (

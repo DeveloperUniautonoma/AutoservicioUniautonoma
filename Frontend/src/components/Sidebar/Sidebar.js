@@ -47,6 +47,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "store/auth/thunks";
 import { MenuRol } from "components/MenuRol/MenuRol";
+import { MenuPrograma } from "components/MenuPrograma/MenuPrograma";
 
 var ps;
 
@@ -146,6 +147,7 @@ const Sidebar = (props) => {
 
         {/* Menu roles */}
         <MenuRol />
+        <MenuPrograma />
         {/* User */}
         <Nav className="align-items-center d-md-none">
           <UncontrolledDropdown nav>

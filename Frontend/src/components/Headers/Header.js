@@ -1,7 +1,5 @@
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 
-
-
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DatosPersona } from "controller/functions/DatosPersona";
@@ -80,11 +78,6 @@ const Header = () => {
                 <Card className="card-stats mb-4 mb-xl-0">
                   <CardBody>
                     <Row>
-                      {/* <Col className="col-auto">
-                        <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
-                          <i className="fas fa-chart-bar" />
-                        </div>
-                      </Col> */}
                       <div className="col">
                         <CardTitle
                           tag="h5"

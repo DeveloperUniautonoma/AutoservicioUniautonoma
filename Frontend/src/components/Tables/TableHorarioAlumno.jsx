@@ -104,11 +104,11 @@ export const TableHorarioAlumno = () => {
                                     { result.jornada }
                                     </Badge>
                                 </td>
-                                <td>{ result.grupo }</td>
-                                <td>{ result.fechaInicio }</td>
-                                <td>{ result.fechaFin }</td>
-                                <td>{ result.horario }</td>
-                                <td>{ result.docente }</td>
+                                    <td>{ result.grupo }</td>
+                                    <td>{ result.fechaInicio }</td>
+                                    <td>{ result.fechaFin }</td>
+                                    <td>{ result.horario }</td>
+                                    <td>{ result.docente }</td>
                                 </tr>
                                 ))}
                             
