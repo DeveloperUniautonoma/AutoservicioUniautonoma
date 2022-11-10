@@ -23,7 +23,7 @@ export const TableHorarioAlumno = () => {
         
         const trae_horario = async() => {
             
-            const { data } = await HorarioModularAlumno('000014622','2020','P001');
+            const { data } = await HorarioModularAlumno(codigoPower.substr(1,10),'2020','P001');
             if ( data.Status === 'Failed' ){
                 setHorario('Failed')
             } else {

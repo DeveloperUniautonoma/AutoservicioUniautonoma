@@ -34,15 +34,12 @@ export const PlanAcademicoAlumno = () => {
     
     const trae_plan_academico = async() => {
     
-        // const { data } = await PlanAcademico( codigoPower, codigoPrograma );
-        const { data } = await PlanAcademico( '000014622', codigoPrograma );
-
+        const { data } = await PlanAcademico( codigoPower.substr(1,10), codigoPrograma );
+        
         if ( data.Status === 'Failed' )
             setPlanAcademico('Failed');
         else
             setPlanAcademico(data.planAcademico);
-
-        
         
     };
 
