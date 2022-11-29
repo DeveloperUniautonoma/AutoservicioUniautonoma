@@ -20,7 +20,7 @@ import {
   parseOptions,
 } from "variables/charts.js";
 
-import Header from "components/Headers/Header.js";
+import Header2 from "components/Headers/Header2.js";
 import { useSelector } from "react-redux";
 import { PlanAcademico } from "controller/functions/PlanAcademico";
 import { Loading2 } from "components/Loading/Loading2";
@@ -56,10 +56,10 @@ export const PlanAcademicoAlumno = () => {
     
   return (
     <>  
-        <Header />
+        <Header2 />
         {
             planAcademico === 'Failed' || Object(planAcademico).length === 0 ?
-                <Container className="mt--7" fluid>
+                <Container className="mt--6" fluid>
                     <Card className="bg-default shadow">
                         <CardHeader className="bg-transparent border-0">
                             <Loading2 />
@@ -67,7 +67,7 @@ export const PlanAcademicoAlumno = () => {
                     </Card>
                 </Container>
             :
-                <Container className="mt--7" fluid>
+                <Container className="mt--8" fluid>
                     <Row className="mt-5 mb-100">                    
                     {
                         planAcademico.map((result, i) => (

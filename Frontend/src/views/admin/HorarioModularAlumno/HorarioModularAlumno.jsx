@@ -1,11 +1,11 @@
-  import Header from "../../../components/Headers/Header";
+  import Header2 from "../../../components/Headers/Header2";
   import { TableHorarioAlumno } from "components/Tables/TableHorarioAlumno";
   
   
   const HorarioAlumno = () => {
     return (
       <>
-        <Header />
+        <Header2 />
         {/* Page content */}
         <TableHorarioAlumno />
       </>

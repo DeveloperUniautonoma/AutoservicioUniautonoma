@@ -6,7 +6,7 @@ import Login from "../auth/Login";
 import Tables from "../examples/Tables";
 import Icons from "../examples/Icons";
 import HorarioModularAlumno from "./HorarioModularAlumno/HorarioModularAlumno";
-import {PlanAcademicoAlumno} from "./PlanAcademicoAlumno/PlanAcademicoAlumno";
+import { PlanAcademicoAlumno } from "./PlanAcademicoAlumno/PlanAcademicoAlumno";
 
 var routes = [
   {
@@ -17,8 +17,8 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/PlanAcademico",
-    name: "Plan Academico",
+    path: "/VerPlanAcademico",
+    name: "Ver Plan Academico",
     icon: "ni ni-credit-card",
     component: PlanAcademicoAlumno,
     layout: "/admin"

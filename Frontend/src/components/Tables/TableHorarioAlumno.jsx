@@ -1,4 +1,5 @@
 
+import { Loading2 } from 'components/Loading/Loading2';
 import { HorarioModularAlumno } from 'controller/functions/HorarioModularAlumno';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
@@ -24,6 +25,7 @@ export const TableHorarioAlumno = () => {
         const trae_horario = async() => {
             
             const { data } = await HorarioModularAlumno(codigoPower.substr(1,10),'2020','P001');
+            
             if ( data.Status === 'Failed' ){
                 setHorario('Failed')
             } else {
@@ -39,16 +41,17 @@ export const TableHorarioAlumno = () => {
   return (
     <>
         { 
-            horario === 'Failed' ?
-                <Container className="mt--7" fluid>
+            horario === 'Failed' || Object(horario).length === 0?
+                <Container className="mt--8" fluid>
                     <Card className="bg-default shadow">
                         <CardHeader className="bg-transparent border-0">
-                            <h3 className="text-white mb-0">No se encontró el horario</h3>
+                            {/* <h3 className="text-white mb-0">No se encontró el horario</h3> */}
+                            <Loading2 />
                         </CardHeader>
                     </Card>
                 </Container>
             :
-                <Container className="mt--7" fluid>
+                <Container className="mt--8" fluid>
                     {/* Dark table */}
                     <Row className="mt-5">
                     <div className="col">
@@ -60,7 +63,7 @@ export const TableHorarioAlumno = () => {
                             className="align-items-center table-dark table-flush"
                             responsive
                         >
-                            <thead className="thead-dark">
+                            <thead>
                             <tr className="text-center">
                                 <th scope="col">Codigo Curso</th>
                                 <th scope="col">Nombre Curso</th>

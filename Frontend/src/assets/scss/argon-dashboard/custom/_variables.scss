@@ -48,11 +48,13 @@ $red:     #f5365c !default;
 $orange:  #fb6340 !default;
 $yellow:  #ffd600 !default;
 $green:   #2dce89 !default;
+$azul_niautonoma:    #097cca !default;
 $teal:    #11cdef !default;
 $cyan:    #2bffc6 !default;
 
 $colors: () !default;
 $colors: map-merge((
+  "azul_niautonoma": $azul_niautonoma,
   "blue":       $blue,
   "indigo":     $indigo,
   "purple":     $purple,
@@ -74,7 +76,7 @@ $default:       #172b4d !default;
 $primary:       #5e72e4 !default;
 $secondary:     #f7fafc !default;
 $success:       $green !default;
-$info:          $teal !default;
+$info:          $azul_niautonoma !default;
 $warning:       $orange !default;
 $danger:        $red !default;
 $light:         $gray-500 !default;

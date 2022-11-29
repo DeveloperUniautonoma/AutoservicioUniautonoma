@@ -43,3 +43,19 @@ Aqui van las credenciales a la BD
 ingresar la api key de django en el archivo settings.py
 
 
+******************
+## Iniciar servicios del backend
+Backend/Autoservicio
+
+Ejecutar: python manage.py runserver
+
+
+********************
+## Iniciar aplicacion de react js
+Frontend
+
+Ejecutar: npm start
+
+
+
+
